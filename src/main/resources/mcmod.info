@@ -1,0 +1,16 @@
+[
+{
+  "modid": "fmpintegration",
+  "name": "FMPIntegration",
+  "description": "A mod adding FMP integration",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["Wasliebob"],
+  "credits": "ChickenBones, for creation FMP",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
