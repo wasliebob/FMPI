@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import codechicken.microblock.BlockMicroMaterial;
 import codechicken.microblock.MicroMaterialRegistry;
 import fmpintegration.api.FMPIntegration;
+import fmpintegration.helpers.BannedListHelper;
 
 public class Micropart {
 	public static void init()
@@ -23,7 +24,7 @@ public class Micropart {
 		for(Object o : Block.blockRegistry.getKeys()){
 			String s = (String)o;
 			Block b = Block.getBlockFromName(s);
-			if(MicroMaterialRegistry.getMaterial(s) == null && !FMPIntegration.isBanned(b) && b != null && Item.getItemFromBlock(b) != null && acceptsFullCube(b)){
+			if(MicroMaterialRegistry.getMaterial(s) == null && !FMPIntegration.isBanned(b) && b != null && Item.getItemFromBlock(b) != null && acceptsFullCube(b) && !BannedListHelper.bannedBlocks.contains(b)){
 				HashSet<String> known = new HashSet<String>();
 
 				for(int meta = 0; meta < 16; meta++){

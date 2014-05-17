@@ -7,8 +7,6 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.relauncher.Side;
-import fmpintegration.main.init.integration.IntergrationLoader;
 import fmpintegration.proxies.CommonProxy;
 
 @Mod(modid = "FMPIntegration", name = "FMPIntegration", version = "1.0" ,dependencies = "required-after:ForgeMultipart")
@@ -26,7 +24,6 @@ public class FI {
     public void preInit(FMLPreInitializationEvent event)
     {
     	Config.loadConfig(event);
-    	
 		proxy.load();
     }
     
@@ -34,8 +31,6 @@ public class FI {
     public void init(FMLInitializationEvent event)
     {
     	Micropart.init();
-    	if(event.getSide() == Side.CLIENT)
-    		IntergrationLoader.init();
     }
     
     @EventHandler
