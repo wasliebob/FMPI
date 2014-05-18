@@ -34,8 +34,5 @@ public class FI {
     }
     
     @EventHandler
-    public void postInit(FMLPostInitializationEvent evt)
-    {
-
-    }
+    public void postInit(FMLPostInitializationEvent evt){}
 }

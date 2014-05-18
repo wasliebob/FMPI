@@ -24,7 +24,7 @@ public class Micropart {
 		for(Object o : Block.blockRegistry.getKeys()){
 			String s = (String)o;
 			Block b = Block.getBlockFromName(s);
-			if(MicroMaterialRegistry.getMaterial(s) == null && !FMPIntegration.isBanned(b) && b != null && Item.getItemFromBlock(b) != null && acceptsFullCube(b) && !BannedListHelper.bannedBlocks.contains(b)){
+			if(MicroMaterialRegistry.getMaterial(s) == null && !FMPIntegration.isBanned(b) && b != null && Item.getItemFromBlock(b) != null && acceptsFullCube(b) && !BannedListHelper.bannedBlocks.contains(b) && hasTexture(b)){
 				HashSet<String> known = new HashSet<String>();
 
 				for(int meta = 0; meta < 16; meta++){
@@ -40,6 +40,11 @@ public class Micropart {
 				};
 			}
 		}
+	}
+	
+	public static boolean hasTexture(Block block)
+	{
+		return block.getBlockTextureFromSide(0) != null;
 	}
 	
 	public static boolean acceptsFullCube(Block block)
