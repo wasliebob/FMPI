@@ -15,15 +15,13 @@ public class Config {
 		generateBanned(config);
 		fullCube = config.get(Configuration.CATEGORY_GENERAL, "fullCube", true, "Set this to true to only register blocks which are a full (1x1x1) cube").getBoolean(fullCube);
 		numbering = config.get(Configuration.CATEGORY_GENERAL, "numbering", false, "Set this to true to register blocks which have a number in them (without this only the block with 1 in it will get registered (this will also make all blocks from mods like Chisel get registered!)").getBoolean(numbering);
-		fileLocation = config.get(Configuration.CATEGORY_GENERAL, "fileLocation", e.getModConfigurationDirectory().toString()).getString();
-		lists = config.get(Configuration.CATEGORY_GENERAL, "lists", true, "Set this to true to generate a file with all mods for banned blocks list").getBoolean(lists);
+		lists = config.get(Configuration.CATEGORY_GENERAL, "lists", false, "Set this to true to generate a file with all mods for banned blocks list").getBoolean(lists);
 
 		config.save();
 	}
 	public static boolean fullCube;
 	public static boolean numbering;
 	public static boolean lists;
-	public static String fileLocation;
 	
 	public static void generateBannedMods(Configuration config){
 		Property bannedMods = config.get(Configuration.CATEGORY_GENERAL, "bannedMods", "");

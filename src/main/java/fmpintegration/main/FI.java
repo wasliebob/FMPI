@@ -21,17 +21,17 @@ public class FI {
     public static double version = 1.00;
     public static String modName = "FMPIntegration";
     public static String alias = "FI";
+    public static String configLocation;
     
     @EventHandler
-    public void preInit(FMLPreInitializationEvent event)
-    {
+    public void preInit(FMLPreInitializationEvent event){
     	Config.loadConfig(event);
 		proxy.load();
+		configLocation = event.getModConfigurationDirectory().toString();
     }
     
     @EventHandler
-    public void init(FMLInitializationEvent event)
-    {
+    public void init(FMLInitializationEvent event){
     	if(Config.lists){
     		FileHelper.createMainFolder();
     		FileHelper.createBaseFileOutsideFolder("mods", "txt", FileHelper.generateList(Loader.instance().getModList()));

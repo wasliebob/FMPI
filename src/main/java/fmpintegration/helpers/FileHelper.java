@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cpw.mods.fml.common.ModContainer;
-import fmpintegration.main.Config;
+import fmpintegration.main.FI;
 
 public class FileHelper {
 	
@@ -31,7 +31,7 @@ public class FileHelper {
 	public static void createMainFolder() {
 		File file;
 		try{
-			file = new File(Config.fileLocation + getSlash() + "FMPI" + getSlash());
+			file = new File(FI.configLocation + getSlash() + "FMPI" + getSlash());
 			if(!file.exists())
 				file.mkdir();
 		}catch(Exception e){
@@ -47,9 +47,9 @@ public class FileHelper {
 	public static void createBaseFileOutsideFolder(String fileName, String extension, ArrayList<String> list){
 		File file;
 		try {
-			file = new File(Config.fileLocation + getSlash() + "FMPI" + getSlash() + fileName + "." + extension);
+			file = new File(FI.configLocation + getSlash() + "FMPI" + getSlash() + fileName + "." + extension);
 			file.createNewFile();
-			PrintWriter writer = new PrintWriter(Config.fileLocation + getSlash() + "FMPI" + getSlash() + fileName + "." + extension, "UTF-8");
+			PrintWriter writer = new PrintWriter(FI.configLocation + getSlash() + "FMPI" + getSlash() + fileName + "." + extension, "UTF-8");
 			
 			for(int i = 0; i < list.size(); i++)
 				if(list.get(i) != null)
