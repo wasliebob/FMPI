@@ -28,8 +28,8 @@ minecraft {
 
 dependencies{
 	compile files(
-	'build/deps/CCC.jar',
-	'build/deps/FMP.jar'
+	'deps/CCC.jar',
+	'deps/FMP.jar'
 	)
 }
 
