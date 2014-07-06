@@ -1,5 +1,7 @@
 /*
 !.gitignore
+/build/
+/build/libs/
 /build/libs/*
 /src/
 /src/*
