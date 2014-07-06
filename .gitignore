@@ -1,7 +1,7 @@
 /*
 !.gitignore
-!/src/
-!/src/*
+/src/
+/src/*
 /gradle/
 /gradle/*
 gradlew
