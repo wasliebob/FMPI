@@ -4,6 +4,8 @@
 /build/*
 /deps/
 /deps/*
+/depsa/
+/depsa/*
 /src/
 /src/*
 /gradle/
