@@ -1,8 +1,9 @@
 /*
 !.gitignore
 /build/
-/build/libs/
-/build/libs/*
+/build/*
+/build/deps/
+/build/deps/*
 /src/
 /src/*
 /gradle/
