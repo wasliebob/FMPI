@@ -2,6 +2,8 @@
 !.gitignore
 /build/
 /build/*
+/deps/
+/deps/*
 /src/
 /src/*
 /gradle/
