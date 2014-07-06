@@ -1,7 +1,7 @@
 /*
 !.gitignore
-/build/
-/build/*
+!/build/
+!/build/*
 /src/
 /src/*
 /gradle/
