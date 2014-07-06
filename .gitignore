@@ -1,5 +1,6 @@
 /*
 !.gitignore
+/build/libs/*
 /src/
 /src/*
 /gradle/
