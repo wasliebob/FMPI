@@ -11,7 +11,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import fmpintegration.helpers.FileHelper;
 import fmpintegration.proxies.CommonProxy;
 
-@Mod(modid = "FMPIntegration", name = "FMPIntegration", version = "1.0" ,dependencies = "required-after:ForgeMultipart")
+@Mod(modid = "FMPIntegration", name = "FMPIntegration", version = "1.0" ,dependencies = "required-after:ForgeMultipart;after:*")
 public class FI {
     @SidedProxy(clientSide = "fmpintegration.proxies.ClientProxy", serverSide = "fmpintegration.proxies.CommonProxy")
     public static CommonProxy proxy;

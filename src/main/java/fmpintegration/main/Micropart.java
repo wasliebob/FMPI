@@ -12,20 +12,17 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import fmpintegration.api.FMPIntegration;
 
 public class Micropart {
-	public static void init()
-	{
+	public static void init(){
 		addExceptions();
 		initMicroparts();
 	}
 	
-	public static void addExceptions()
-	{
+	public static void addExceptions(){
 		FMPIntegration.alwaysRender.add(Blocks.lava);
 		FMPIntegration.alwaysRender.add(Blocks.water);
 	}
 	
-	public static void initMicroparts()
-	{
+	public static void initMicroparts(){
 		for(Object o : Block.blockRegistry.getKeys()){
 			String s = (String)o;
 			Block b = Block.getBlockFromName(s);
@@ -54,8 +51,7 @@ public class Micropart {
 			return true;
 	}
 	
-	public static boolean acceptsFullCube(Block block)
-	{
+	public static boolean acceptsFullCube(Block block){
 		if(!Config.fullCube)
 			return true;
 		else if(Config.fullCube && !FMPIntegration.alwaysRender.contains(block))
@@ -64,8 +60,7 @@ public class Micropart {
 			return true;
 	}
 	
-	public static boolean containsNumber(String name)
-	{
+	public static boolean containsNumber(String name){
 		if(!Config.numbering){
 			String[] numb = new String[]{"2", "3", "4", "5", "6", "7", "8", "9", "11", "0"};
 			for(int i = 0; i < numb.length; i++)
@@ -81,8 +76,7 @@ public class Micropart {
 			registerMultipart(block, i);
 	}
 
-	private static void registerMultipart(Block block, int meta)
-	{
+	private static void registerMultipart(Block block, int meta){
 		System.out.println("[FMPI] " + " registering multipart for " + block.getLocalizedName());
 		MicroMaterialRegistry.registerMaterial(new BlockMicroMaterial(block, meta), block.getUnlocalizedName() + (meta == 0 ? "" : "_" + meta));
 	}

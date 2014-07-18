@@ -22,14 +22,15 @@ group= "fmpintegration" // http://maven.apache.org/guides/mini/guide-naming-conv
 archivesBaseName = "fmpintegration"
 
 minecraft {
-    version = "1.7.2-10.12.1.1060"
+    version = "1.7.10-10.13.0.1182"
     assetDir = "eclipse/assets"
 }
 
 dependencies{
 	compile files(
 	'deps/CCC.jar',
-	'deps/FMP.jar'
+	'deps/FMP.jar',
+	'deps/CCL.jar'
 	)
 }
 
