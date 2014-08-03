@@ -36,7 +36,8 @@ public class Micropart {
 					}catch(Exception e){
 						continue;
 					}
-					if(name != null && known.add(name) && !containsNumber(name)){
+					
+					if((name != null && known.add(name) && !containsNumber(name)) || (name != null && GameRegistry.findUniqueIdentifierFor(b) != null && GameRegistry.findUniqueIdentifierFor(b).modId == "chisel")){
 						registerMultipart(b, meta);
 					}
 				};
@@ -69,11 +70,6 @@ public class Micropart {
 			return false;
 		}
 		return false;
-	}
-	
-	public static void registerMetadata(Block block, int maxMeta){
-		for (int i = 0; i <= maxMeta; i ++)
-			registerMultipart(block, i);
 	}
 
 	private static void registerMultipart(Block block, int meta){
